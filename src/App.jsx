@@ -1,4 +1,3 @@
-
 // src/App.jsx
 // Final step of Phase B: Added repeatable Projects section
 
@@ -90,9 +89,7 @@ export default function App() {
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">Your Details</h2>
           
           <form className="space-y-4">
-            {/* ... (All the fields from before: Name, Headline, Bio, Photo, Skills, Socials) ... */}
-            {/* NOTE: I'm hiding them here for brevity, but they are in the full code block */}
-
+            
             {/* --- Name Field --- */}
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-600">Your Name</label>
@@ -239,7 +236,7 @@ export default function App() {
               <div className="flex space-x-4">
                 {github && <a href={github} target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800 font-medium">GitHub</a>}
                 {linkedin && <a href={linkedin} target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800 font-medium">LinkedIn</a>}
-                {twitter && <a href={twitter} target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800 font-medium">Twitter</a>}
+                {twitter && <a href={twitter} target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-8Z00 font-medium">Twitter</a>}
                 {!github && !linkedin && !twitter && <p className="text-gray-500 text-sm">Your social links will appear here.</p>}
               </div>
             </div>
