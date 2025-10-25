@@ -344,15 +344,9 @@ Eager to leverage my technical abilities in a challenging internship role.`;
            <div className="mt-6">
           <h4 className="text-2xl font-semibold text-gray-700 border-b pb-1 mb-3">Skills</h4>
           <div className="flex flex-wrap gap-2">
-            {/* Start of the map function */}
             {skills.split(',').filter(skill => skill.trim() !== '').map((skill, index) => (
-              <span key={index} className="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-1 rounded-full">
-                {skill.trim()}
-              </span>
-            ))} 
-            {/* End of the map function - the ')}' closes the map, the '}' closes the outer JS expression */}
-
-            {/* Conditional text if no skills */}
+              <span key={index} className="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-1 rounded-full">{skill.trim()}</span> {/* Better padding */}
+            ))} {/* The extra parenthesis was here */}
             {skills.trim() === '' && <p className="text-gray-500 text-sm">Your skills will appear here.</p>}
           </div>
         </div>
