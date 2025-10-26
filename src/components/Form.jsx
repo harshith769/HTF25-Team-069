@@ -1,6 +1,6 @@
 // src/components/Form.jsx
 
-// We must receive all the props from App.jsx
+// We must receive all the props from App.jsx, including the two new handlers
 export default function Form({
   name, setName,
   headline, setHeadline,
@@ -14,7 +14,9 @@ export default function Form({
   handleAddProject,
   handleRemoveProject,
   handleProjectChange,
-  handleProjectPhotoChange
+  handleProjectPhotoChange,
+  handleAiGenerate, // ADDED: Function for the AI button
+  handleDownload // ADDED: Function for the Download button
 }) {
   return (
     <section className="bg-white p-6 rounded-lg shadow-lg">
@@ -32,11 +34,23 @@ export default function Form({
           <label htmlFor="headline" className="block text-sm font-medium text-gray-600">Headline</label>
           <input type="text" id="headline" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="e.g., Full Stack Developer" value={headline} onChange={(e) => setHeadline(e.target.value)} />
         </div>
-        {/* --- Bio Field --- */}
+        
+        {/* --- Bio Field with AI Button (FIXED) --- */}
         <div>
-          <label htmlFor="bio" className="block text-sm font-medium text-gray-600">Short Bio</label>
+          <div className="flex justify-between items-center">
+            <label htmlFor="bio" className="block text-sm font-medium text-gray-600">Short Bio</label>
+            {/* AI BUTTON */}
+            <button
+              type="button"
+              className="text-xs font-bold text-indigo-600 hover:text-indigo-800"
+              onClick={handleAiGenerate}
+            >
+              ✨ Generate with AI
+            </button>
+          </div>
           <textarea id="bio" rows="3" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Tell us a bit about yourself..." value={bio} onChange={(e) => setBio(e.target.value)} />
         </div>
+        
         {/* --- Photo Field --- */}
         <div>
           <label htmlFor="photo" className="block text-sm font-medium text-gray-600">Profile Photo</label>
@@ -115,6 +129,17 @@ export default function Form({
             className="mt-2 w-full bg-indigo-600 text-white py-2 px-4 rounded-md font-semibold hover:bg-indigo-700"
           >
             + Add Project
+          </button>
+        </div>
+        
+        {/* --- Download Button (FIXED) --- */}
+        <div className="pt-6 mt-6 border-t">
+          <button
+            type="button"
+            className="w-full bg-green-600 text-white py-3 px-4 rounded-md font-semibold text-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+            onClick={handleDownload}
+          >
+            Download Portfolio (.zip)
           </button>
         </div>
         

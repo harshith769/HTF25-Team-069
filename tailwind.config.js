@@ -1,8 +1,9 @@
+// tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,jsx}",
+    "./src//*.{js,ts,jsx,tsx}", // CRITICAL: This line finds all your React components
   ],
   theme: {
     extend: {},
